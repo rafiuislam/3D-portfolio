@@ -20,7 +20,7 @@ const EarthCanvas = () => {
         fov: 45,
         far: 200,
         near: 0.1,
-        position: [-4, 3, 6],
+        position: [-0, 3, 6],
       }}
       gl={{ preserveDrawingBuffer: true }}
     >
