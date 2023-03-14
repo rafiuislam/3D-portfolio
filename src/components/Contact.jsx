@@ -7,6 +7,9 @@ import { slideIn } from "../utils/motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 
+// trex7T3zXDFxjjvmt
+// template_bbgfvwj
+// service_p1xkfcl
 const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
@@ -16,9 +19,47 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  const handleSubmit = (e) => {};
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_p1xkfcl",
+        "template_bbgfvwj",
+        {
+          from_name: form.name,
+          to_name: "Rafiu",
+          from_email: form.email,
+          to_email: "md.rafiu.islam@g.bracu.ac.bd",
+          message: form.message,
+        },
+        "trex7T3zXDFxjjvmt"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you. I will get back to you as soon as possible.");
+
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+
+          alert("Something went wrong!");
+        }
+      );
+  };
 
   return (
     <div className="xl:flex-row xl:mt-12 flex flex-col-reverse gap-10 overflow-hidden">
