@@ -43,7 +43,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 leading-[30px] text-secondary text-[17px] max-w-3xl"
+        className="mt-4 leading-[30px] text-secondary text-[17px] max-w-3xl text-center sm:text-left"
       >
         As a fresher with less experience in ReactJS, VueJS, and NodeJS and
         ThreeJs development, I am eager to learn and grow in these technologies.
